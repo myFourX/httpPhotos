@@ -13,17 +13,8 @@ class HttpPhotosViewController: UIViewController,UICollectionViewDelegate, UICol
     var photos = [PhotosModel]()
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet var indicatorView: UIActivityIndicatorView!
-    
-    let flowLayout: UICollectionViewFlowLayout = {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width/4, height: UIScreen.main.bounds.width/4)
-        flowLayout.scrollDirection = .vertical
-        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 0
-        return flowLayout
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +40,7 @@ class HttpPhotosViewController: UIViewController,UICollectionViewDelegate, UICol
     }
 
     func setupUI() {
-        self.collectionView.collectionViewLayout = self.flowLayout
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width/4, height: UIScreen.main.bounds.width/4)
         self.collectionView.register(UINib(nibName: "PhotoItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PhotoItemCollectionViewCell")
     }
 

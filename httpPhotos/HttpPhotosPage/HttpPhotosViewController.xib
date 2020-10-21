@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HttpPhotosViewController" customModule="httpPhotos" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="4o2-OS-Vud" id="6jU-43-cuw"/>
+                <outlet property="flowLayout" destination="6rg-SG-gTH" id="B5f-EC-k5e"/>
                 <outlet property="indicatorView" destination="mt2-kQ-2vW" id="mmg-Jz-kYL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,7 +24,7 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4o2-OS-Vud">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="6rg-SG-gTH">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="6rg-SG-gTH">
                         <size key="itemSize" width="150" height="150"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
