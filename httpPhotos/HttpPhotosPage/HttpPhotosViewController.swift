@@ -8,16 +8,25 @@
 import UIKit
 import Alamofire
 
-class HttpPhotosViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
+class HttpPhotosViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var photos = [PhotosModel]()
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var indicatorView: UIActivityIndicatorView!
     
+    let flowLayout: UICollectionViewFlowLayout = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width/4, height: UIScreen.main.bounds.width/4)
+        flowLayout.scrollDirection = .vertical
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 0
+        return flowLayout
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
                 
@@ -32,16 +41,15 @@ class HttpPhotosViewController: UIViewController,UICollectionViewDelegate, UICol
             }
         }
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        flowLayout.itemSize = CGSize(width: size.width/4, height: size.width/4)
+    }
 
     func setupUI() {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width/4, height: UIScreen.main.bounds.width/4)
-        flowLayout.scrollDirection = .vertical
-        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 0
-        
-        self.collectionView.setCollectionViewLayout(flowLayout, animated: false)
+        self.collectionView.collectionViewLayout = self.flowLayout
         self.collectionView.register(UINib(nibName: "PhotoItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PhotoItemCollectionViewCell")
     }
 
@@ -59,6 +67,6 @@ class HttpPhotosViewController: UIViewController,UICollectionViewDelegate, UICol
     }
     
     deinit {
-        print(self.classForCoder)
+        print("deinit: \(self.classForCoder)")
     }
 }

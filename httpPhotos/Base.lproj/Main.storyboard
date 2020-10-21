@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nLg-SE-Pf4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nLg-SE-Pf4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWw-q5-Sjt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWw-q5-Sjt">
                                 <rect key="frame" x="165" y="433" width="84" height="30"/>
                                 <state key="normal" title="Request API"/>
                                 <connections>
@@ -30,16 +30,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="VQ7-7O-oRd"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="y9o-xZ-tK2" firstAttribute="centerX" secondItem="DrZ-qo-f1B" secondAttribute="centerX" id="LCx-gD-C3z"/>
                             <constraint firstItem="VQ7-7O-oRd" firstAttribute="trailing" secondItem="y9o-xZ-tK2" secondAttribute="trailing" constant="10" id="Lkn-ib-eQ7"/>
                             <constraint firstItem="fWw-q5-Sjt" firstAttribute="centerY" secondItem="DrZ-qo-f1B" secondAttribute="centerY" id="TSK-uR-NBD"/>
                             <constraint firstItem="y9o-xZ-tK2" firstAttribute="top" secondItem="VQ7-7O-oRd" secondAttribute="top" constant="150" id="ip0-on-XAY"/>
                             <constraint firstItem="fWw-q5-Sjt" firstAttribute="centerX" secondItem="DrZ-qo-f1B" secondAttribute="centerX" id="kfh-M5-Kbg"/>
                             <constraint firstItem="y9o-xZ-tK2" firstAttribute="leading" secondItem="VQ7-7O-oRd" secondAttribute="leading" constant="10" id="tiq-ZJ-0LI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="VQ7-7O-oRd"/>
                     </view>
                     <navigationItem key="navigationItem" id="il7-6G-V9H"/>
                 </viewController>
