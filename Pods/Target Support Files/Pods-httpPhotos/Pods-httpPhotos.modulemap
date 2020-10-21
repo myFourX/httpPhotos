@@ -1,0 +1,6 @@
+framework module Pods_httpPhotos {
+  umbrella header "Pods-httpPhotos-umbrella.h"
+
+  export *
+  module * { export * }
+}
